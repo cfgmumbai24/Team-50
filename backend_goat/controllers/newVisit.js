@@ -3,7 +3,7 @@ const Visit = require("../models/Visit");
 
 const newVisit = async (req, res) => {
   try {
-    const { fellowId,date, status } = req.body;
+    const { fellowId,date } = req.body;
 
     // Find the fellow document
     const fellow = await Fellow.findById(fellowId);
@@ -15,7 +15,6 @@ const newVisit = async (req, res) => {
     // Create a new visit document
     const newVisit = new Visit({
       date,
-      status,
       fellowId: fellow._id,
     });
 

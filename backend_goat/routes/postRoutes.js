@@ -43,6 +43,7 @@ router.post("/assignfamily", async (req, res) => {
     fellow.families.push(familyId);
     const updatedFellow = await fellow.save();
     family.fellowId = fellowId;
+    family.save();
     res.status(200).json(updatedFellow);
   } catch (err) {
     console.error(err);

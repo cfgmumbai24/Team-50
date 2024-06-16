@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 
 const visitSchema = new mongoose.Schema({
-  date: { type: Date, required: true },
-  status: { type: Boolean, required: true },
+  date: { type: String, required: true },
   fellowId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Fellow",
