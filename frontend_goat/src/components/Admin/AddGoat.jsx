@@ -20,7 +20,7 @@ const CreateGoatForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_SITE}/api/post/addgoat`, {
+      const response = await fetch(`http://localhost:8080/api/post/addgoat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

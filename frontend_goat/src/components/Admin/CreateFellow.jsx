@@ -15,7 +15,7 @@ const CreateFellowForm = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_SITE}/api/post/createFellow`,
+        "http://localhost:8080/api/post/createFellow",
         {
           method: "POST",
           headers: {

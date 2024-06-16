@@ -10,13 +10,13 @@ const FellowFamilyAssignment = () => {
     const fetchData = async () => {
       try {
         const fellowsResponse = await fetch(
-          `${import.meta.env.VITE_SITE}/api/get/allfellows`
+          `http://localhost:8080/api/get/allfellows`
         );
         const fellowsData = await fellowsResponse.json();
         setFellows(fellowsData);
 
         const familiesResponse = await fetch(
-          `${import.meta.env.VITE_SITE}/api/get/allfamilies`
+          `http://localhost:8080/api/get/allfamilies`
         );
         const familiesData = await familiesResponse.json();
         console.log(familiesData);
@@ -40,7 +40,7 @@ const FellowFamilyAssignment = () => {
   const handleAssignFamily = async (familyId) => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_SITE}/api/post/assignfamily`,
+        `http://localhost:8080/api/post/assignfamily`,
         {
           method: "POST",
           headers: {
@@ -82,7 +82,7 @@ const FellowFamilyAssignment = () => {
           <h3>Unassigned Families</h3>
           <ul>
             {unassignedFamilies.map((family) => (
-              <li key={family._id}>
+              <li key={family._id} className="text-white bg-green">
                 {family.name}{" "}
                 <button onClick={() => handleAssignFamily(family._id)}>
                   Assign

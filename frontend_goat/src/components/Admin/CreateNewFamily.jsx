@@ -16,7 +16,7 @@ const CreateFamilyForm = () => {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_SITE}/api/post/createFamily`,
+        `http://localhost:8080/api/post/createFamily`,
         {
           method: "POST",
           headers: {
