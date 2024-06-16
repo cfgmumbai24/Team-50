@@ -1,0 +1,87 @@
+.image-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .image-checkbox img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .question {
+    text-align: center;
+  }
+  
+  .images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  
+
+  .button-10 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 6px 14px;
+    margin-left: 770px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+  
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+     background-origin: border-box;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-10:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+  }
+  .button-10:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+
+  .take-test-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .take-test-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .take-test-label {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .take-test-select {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .take-test-select option {
+    font-size: 16px;
+  }
+  
+  
