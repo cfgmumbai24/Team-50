@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+form {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus,
+input:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+}

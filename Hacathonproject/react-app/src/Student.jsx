@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Student.css"; // Ensure you have CSS for styling
 
 function Student() {
+    const navigate = useNavigate();
     const [students, setStudents] = useState([]);
     const [editIndex, setEditIndex] = useState(-1);
     const [editStudent, setEditStudent] = useState({
@@ -82,6 +84,9 @@ function Student() {
             console.error("There was an error adding the student!", err);
         }
     };
+    function handleSubmit() {
+        navigate('/');
+    }
 
     return (
         <div className="students">
@@ -168,6 +173,7 @@ function Student() {
             <button className="add-button" onClick={() => setShowAddForm(!showAddForm)}>
                 {showAddForm ? "Cancel" : "Add Student"}
             </button>
+            <button className="add-button" onClick={handleSubmit}>Submit</button>
         </div>
     );
 }

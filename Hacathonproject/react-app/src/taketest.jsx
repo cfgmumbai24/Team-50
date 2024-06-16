@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles.css";
-
+import Navbar from "./components/navbar";
 function TakeTest() {
+
+
   const [students, setStudents] = useState([
     {
       "id": 1,
@@ -29,11 +31,11 @@ function TakeTest() {
       "category": "D"
     },
     {
-        "id": 4,
-        "name": "Rohit",
-        "class": "4",
-        "category": "B"
-      }
+      "id": 4,
+      "name": "Rohit",
+      "class": "4",
+      "category": "B"
+    }
   ]);
   const [selectedStudent, setSelectedStudent] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
@@ -80,44 +82,47 @@ function TakeTest() {
 
   return (
     <>
-    <div className="take-test-container">
-      <h1 className="take-test-heading">Take Test</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="input-group">
-          <label className="take-test-label" htmlFor="studentSelect">Select Student: </label>
-          <select className="take-test-select" id="studentSelect" name="studentSelect" value={selectedStudent} onChange={handleChange}>
-            <option value="">-- Select a student --</option>
-            {students.map((student) => (
-              <option key={student.id} value={student.name}>
-                {student.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="input-group">
-          <label className="take-test-label" htmlFor="classInput">Student Class: </label>
-          <input className="take-test-input" type="text" id="classInput" name="classInput" value={selectedClass} onChange={handleChange} readOnly />
-        </div>
-        <div className="input-group">
-          <label className="take-test-label" htmlFor="categoryInput">Category: </label>
-          <input className="take-test-input" type="text" id="categoryInput" name="categoryInput" value={selectedCategory} onChange={handleChange} readOnly />
-        </div>
-        <div className="input-group">
-          <label className="take-test-label" htmlFor="subjectInput">Select Subject: </label>
-          <select className="take-test-select" id="subjectInput" name="subjectInput" value={selectedSubject} onChange={handleChange}>
-            <option value="">-- Select a subject --</option>
-            <option value="Literacy">Literacy</option>
-            <option value="Numeracy">Numeracy</option>
-            <option value="Socio Emotional">Socio Emotional</option>
-          </select>
-        </div>
-        <br/>
-        
-      </form>
-      <br/>
-      
-    </div>
-    <button className="submit-button" type="submit" class="button-10" role="button">Submit</button>
+      <Navbar />
+      <br /><br />
+      <div className="take-test-container">
+        <h1 className="take-test-heading">Take Test</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label className="take-test-label" htmlFor="studentSelect">Select Student: </label>
+            <select className="take-test-select" id="studentSelect" name="studentSelect" value={selectedStudent} onChange={handleChange}>
+              <option value="">-- Select a student --</option>
+              {students.map((student) => (
+                <option key={student.id} value={student.name}>
+                  {student.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="input-group">
+            <label className="take-test-label" htmlFor="classInput">Student Class: </label>
+            <input className="take-test-input" type="text" id="classInput" name="classInput" value={selectedClass} onChange={handleChange} readOnly />
+          </div>
+          <div className="input-group">
+            <label className="take-test-label" htmlFor="categoryInput">Category: </label>
+            <input className="take-test-input" type="text" id="categoryInput" name="categoryInput" value={selectedCategory} onChange={handleChange} readOnly />
+          </div>
+          <div className="input-group">
+            <label className="take-test-label" htmlFor="subjectInput">Select Subject: </label>
+            <select className="take-test-select" id="subjectInput" name="subjectInput" value={selectedSubject} onChange={handleChange}>
+              <option value="">-- Select a subject --</option>
+              <option value="Literacy">Literacy</option>
+              <option value="Numeracy">Numeracy</option>
+              <option value="Socio">Socio Emotional</option>
+            </select>
+          </div>
+          <br />
+
+        </form>
+        <br />
+
+      </div>
+      <br /><br />
+      <button className="submit-button" type="submit" class="button-11" role="button" onClick={handleSubmit}>Submit</button>
     </>
   );
 }
