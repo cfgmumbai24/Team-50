@@ -82,9 +82,12 @@ const FellowFamilyAssignment = () => {
           <h3>Unassigned Families</h3>
           <ul>
             {unassignedFamilies.map((family) => (
-              <li key={family._id} className="text-white bg-green">
+              <li key={family._id}>
                 {family.name}{" "}
-                <button onClick={() => handleAssignFamily(family._id)}>
+                <button
+                  className="text-white bg-green-700 rounded-lg ml-5 mb-2 py-1 px-2"
+                  onClick={() => handleAssignFamily(family._id)}
+                >
                   Assign
                 </button>
               </li>

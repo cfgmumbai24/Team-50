@@ -7,6 +7,7 @@ router.get("/allVisit", getVisits);
 const Fellow = require("../models/Fellow");
 const Family = require("../models/Family");
 const Goat = require("../models/Goat");
+const Visit = require("../models/Visit");
 
 // GET /api/fellows
 router.get("/allfellows", async (req, res) => {
@@ -45,6 +46,16 @@ router.get("/allfamilies", async (req, res) => {
     const families = await Family.find().populate("goats");
 
     res.status(200).json(families);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+router.get("/allVisits", async (req, res) => {
+  try {
+    const visits = await Visit.find();
+
+    res.status(200).json(visits);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server error" });
